@@ -4,53 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AuraGroom – Men's Grooming & Essentials</title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <body class="animated-background"> 
-    <script>
-    if (!localStorage.getItem('auragroomUser')) {
-      window.location.href = 'register.html';
-    }
-  </script>
-  
+
   <style>
     body {
       background: linear-gradient(to right, #f8f9fa, #e3f2fd);
-    }
-    .product-card {
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     }
     .product-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
-    #scrollToTopBtn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: none;
-      background-color: #0d6efd;
-      color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 18px;
-      z-index: 9999;
-    }
     .promo-banner {
       background: linear-gradient(135deg, #6a11cb, #2575fc);
       color: white;
-      padding: 30px 0;
+      padding: 20px;
       text-align: center;
-      font-size: 1.2rem;
       font-weight: bold;
-    }
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1050;
     }
     .animated-background {
       animation: gradientAnimation 8s ease infinite;
@@ -65,174 +37,110 @@
   </style>
 </head>
 
+<body class="animated-background">
 
+<script>
+  if (!localStorage.getItem('auragroomUser')) {
+    window.location.href = 'register.html';
+  }
+</script>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #000000, #434343);">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="#"><h1>AuraGroom</h1></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item">
-            <a class="nav-link" href="cart.html">
-              Cart <span id="cart-count" class="badge bg-light text-dark">0</span>
-            </a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="faq.html">FAQs</a></li>
-          <li class="nav-item"><a class="nav-link" href="shipping.html">Delivery</a></li>
-
-          
-
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Promotional Banner -->
-  <div class="promo-banner" data-aos="zoom-in">
-    🎉 Spring Sale is Live! Up to 30% off on all grooming kits. Limited Time Offer! 🚀
-  </div>
-
-  <!-- Hero Section -->
-  <header class="py-5 text-white text-center" style="background: linear-gradient(135deg, #1e3c72, #2a5298);" data-aos="fade-down">
-    <div class="container">
-      <h1 class="display-4 fw-bold">Welcome to AuraGroom</h1>
-      <p class="lead">Elevate your grooming game with premium essentials</p>
-    </div>
-  </header>
-  <!-- AuraGroom Carousel -->
-  <div id="groomingCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-
-      <div class="carousel-item active">
-              <img src="images/AloeAfterBalm.png">
-<img src="images/BeardKit.png">
-<img src="images/CharcoalFacewash.jpg">
-<img src="images/CombCombo.png">
-<img src="images/Grooming1.jpg">
-<img src="images/Grooming2.jpg">
-<img src="images/Grooming3.jpg">
-<img src="images/NishmanHairStylingWax.jpg">
-<img src="images/Trimmer.png">
-       class="d-block w-100" alt="Haircut in progress">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Precision Haircuts</h5>
-          <p>Experience clean and modern styles with skilled barbers.</p>
-        </div>
-      </div>
-  
-      <div class="carousel-item">
-       class="d-block w-100" alt="Father and son shaving">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Everyday Grooming Moments</h5>
-          <p>Make grooming a bonding moment at home.</p>
-        </div>
-      </div>
-  
-      <div class="carousel-item">
-         class="d-block w-100" alt="Styling a beard and hair">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Perfect Finish</h5>
-          <p>Style your beard and hair to perfection.</p>
-        </div>
-      </div>
-  
-    </div>
-  
-    <!-- Carousel controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#groomingCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #000000, #434343);">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">AuraGroom</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#groomingCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  
-
-  <!-- Products Section -->
-  <div class="container my-5">
-    <h2 class="text-center mb-4" data-aos="fade-up"style="color:Tomato;">Shop Our Essentials</h2>
-    <div class="row" id="product-list" data-aos="fade-up" data-aos-delay="200">
-      <!-- Products will be injected by script.js -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
     </div>
   </div>
+</nav>
 
-  <!-- Scroll to Top Button -->
-  <button id="scrollToTopBtn" title="Go to top">
-    ⬆️
+<!-- Banner -->
+<div class="promo-banner">
+  🎉 Sale is Live! Up to 30% Off 🚀
+</div>
+
+<!-- Hero -->
+<header class="py-5 text-white text-center" style="background: linear-gradient(135deg, #1e3c72, #2a5298);">
+  <div class="container">
+    <h1>Welcome to AuraGroom</h1>
+    <p>Premium Grooming Essentials</p>
+  </div>
+</header>
+
+<!-- ✅ FIXED CAROUSEL -->
+<div id="groomingCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <img src="images/AloeAfterBalm.png" class="d-block w-100">
+    </div>
+
+    <div class="carousel-item">
+      <img src="images/BeardKit.png" class="d-block w-100">
+    </div>
+
+    <div class="carousel-item">
+      <img src="images/CharcoalFacewash.jpg" class="d-block w-100">
+    </div>
+
+    <div class="carousel-item">
+      <img src="images/CombCombo.png" class="d-block w-100">
+    </div>
+
+    <div class="carousel-item">
+      <img src="images/Grooming1.jpg" class="d-block w-100">
+    </div>
+
+    <div class="carousel-item">
+      <img src="images/Grooming2.jpg" class="d-block w-100">
+    </div>
+
+    <div class="carousel-item">
+      <img src="images/Grooming3.jpg" class="d-block w-100">
+    </div>
+
+    <div class="carousel-item">
+      <img src="images/NishmanHairStylingWax.jpg" class="d-block w-100">
+    </div>
+
+    <div class="carousel-item">
+      <img src="images/Trimmer.png" class="d-block w-100">
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#groomingCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
   </button>
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-    <script>
-      AOS.init();
-    </script>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <button class="btn btn-success" onclick="checkout()">Proceed to Checkout</button>
-  
-  <footer>
-           <!-- Footer -->
-  <footer class="text-white pt-5 pb-4" style="background: linear-gradient(135deg, #000000, #434343);">
-    <div class="container text-center text-md-start">
-      <div class="row text-center text-md-start">
-        
-        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 fw-bold text-warning">AuraGroom</h5>
-          <p>Elevating men’s grooming standards with premium essentials and unmatched quality.</p>
-        </div>
 
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 fw-bold text-warning">Quick Links</h5>
-          <p><a href="#" class="text-white text-decoration-none">Home</a></p>
-          <p><a href="about.html" class="text-white text-decoration-none">About Us</a></p>
-          <p><a href="cart.html" class="text-white text-decoration-none">Cart</a></p>
-          <p><a href="contact.html" class="text-white text-decoration-none">Contact</a></p>
-        </div>
+  <button class="carousel-control-next" type="button" data-bs-target="#groomingCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
 
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 fw-bold text-warning">Useful</h5>
-          <p><a href="faq.html" class="text-white text-decoration-none">FAQs</a></p>
-          <p><a href="blog.html" class="text-white text-decoration-none">Blog</a></p>
-          <p><a href="privacy-policy.html" class="text-white text-decoration-none">Privacy Policy</a></p>
-          <p><a href="terms-and-conditions.html" class="text-white text-decoration-none">Terms & Conditions</a></p>
-        </div>
+<!-- Products -->
+<div class="container my-5">
+  <h2 class="text-center">Shop Our Essentials</h2>
+  <div class="row" id="product-list"></div>
+</div>
 
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 fw-bold text-warning">Contact</h5>
-          <p><i class="bi bi-envelope me-2"></i> support@auragroom.com</p>
-          <p><i class="bi bi-telephone me-2"></i> +91 9876543210</p>
-          <div class="mt-3">
-            <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
-          </div>
-        </div>
-      </div>
+<!-- Footer -->
+<footer class="text-white text-center p-3" style="background:#000;">
+  © 2025 AuraGroom
+</footer>
 
-      <hr class="my-3 text-white">
-
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <p class="mb-0">&copy; 2025 AuraGroom. All Rights Reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  </footer>
-
-
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
