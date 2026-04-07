@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQs - AuraGroom</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #f8f9fa, #d1f2eb, #f3e5f5);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .faq-section {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      animation: zoomIn 1s ease;
+      margin-bottom: 30px;
+    }
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .faq-title {
+      font-weight: bold;
+      color: #d81b60;
+      cursor: pointer;
+    }
+    .faq-content {
+      display: none;
+      padding-top: 10px;
+      color: #4a148c;
+    }
+    .faq-title:hover {
+      text-decoration: underline;
+    }
+    h2 {
+        color: #1e3c72, #2a5298;
+        font-weight: bold;
+      }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+<nav class="navbar navbar-expand-lg shadow" style="background: linear-gradient(135deg, #000000, #434343);">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-white" href="index.html">AuraGroom</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active text-white" href="index.html">Home</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div class="container py-5">
+    <div class="faq-section">
+ 
+      <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+
+      <div>
+        <p class="faq-title" onclick="toggleContent('faq1')">What makes AuraGroom unique? 💎</p>
+        <div class="faq-content" id="faq1">
+          <p>We focus solely on men's grooming and essentials with carefully selected, high-quality products curated for modern lifestyles.</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="faq-title" onclick="toggleContent('faq2')">Do you offer free shipping? 🚚</p>
+        <div class="faq-content" id="faq2">
+          <p>Yes! We offer free shipping on all orders above ₹499 across India.</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="faq-title" onclick="toggleContent('faq3')">Are your products safe for sensitive skin? 🧴</p>
+        <div class="faq-content" id="faq3">
+          <p>Absolutely. All our products are dermatologically tested and suitable for most skin types, including sensitive skin.</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="faq-title" onclick="toggleContent('faq4')">What is your return policy? 🔁</p>
+        <div class="faq-content" id="faq4">
+          <p>You can return unopened products within 7 days of delivery. Please visit our Return Policy page for more details.</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="faq-title" onclick="toggleContent('faq5')">Can I track my order? 📦</p>
+        <div class="faq-content" id="faq5">
+          <p>Yes, once your order is shipped, a tracking link will be shared via email and SMS.</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="faq-title" onclick="toggleContent('faq6')">How long does delivery take? ⏱️</p>
+        <div class="faq-content" id="faq6">
+          <p>Orders are usually delivered within 3–7 business days depending on your location.</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="faq-title" onclick="toggleContent('faq7')">Do you offer COD (Cash on Delivery)? 💰</p>
+        <div class="faq-content" id="faq7">
+          <p>Yes, we offer Cash on Delivery for most locations in India with a nominal service charge.</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="faq-title" onclick="toggleContent('faq8')">How do I cancel or modify my order? ✏️</p>
+        <div class="faq-content" id="faq8">
+          <p>You can modify or cancel your order within 2 hours of placing it by contacting our customer support team.</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="faq-title" onclick="toggleContent('faq9')">Are there any membership benefits? 🎁</p>
+        <div class="faq-content" id="faq9">
+          <p>Yes! Join our loyalty program to earn points, receive special discounts, and get early access to new products.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function toggleContent(id) {
+      const content = document.getElementById(id);
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <footer class="text-white text-center py-4 w-100" style="background: linear-gradient(135deg, #000000, #434343); position: relative;">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 AuraGroom. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

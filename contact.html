@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - AuraGroom</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #f8f9fa, #d1f2eb, #f3e5f5);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header, footer {
+      background-color: #0d6efd;
+      color: white;
+      padding: 15px 0;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    footer p {
+      margin: 0;
+    }
+    .contact-form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    .contact-form:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      background-color: #0d6efd;
+      color: white;
+      font-size: 24px;
+      padding: 12px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+    }
+    .floating-btn:hover {
+      background-color: #0056b3;
+    }
+    .social-icons a {
+      font-size: 24px;
+      margin: 0 12px;
+      color: #333;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #0d6efd;
+      transform: scale(1.2);
+    }
+    input, textarea, button {
+      transition: all 0.3s ease-in-out;
+    }
+    input:focus, textarea:focus {
+      border-color: #0d6efd;
+      box-shadow: 0 0 8px rgba(13, 110, 253, 0.5);
+    }
+    button:hover {
+      transform: scale(1.05);
+      background-color: #0d6efd;
+    } 
+    #thankYou {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #28a745;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<!-- Header -->
+<nav class="navbar navbar-expand-lg shadow" style="background: linear-gradient(135deg, #000000, #434343);">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-white" href="index.html">AuraGroom</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active text-white" href="index.html">Home</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Floating Contact Button -->
+<a href="contact.html" class="btn btn-primary rounded-circle floating-btn" title="Contact Us">
+  <i class="fas fa-envelope"></i>
+</a>
+
+<div class="container my-5">
+  <h2 class="text-center mb-4" data-aos="fade-down">Contact AuraGroom</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-8" data-aos="fade-up">
+      <form id="contactForm" class="contact-form">
+        <div class="mb-3">
+          <label for="name" class="form-label">Your Name</label>
+          <input type="text" id="name" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" id="email" class="form-control" required />
+          <div class="invalid-feedback">Please enter a valid email.</div>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Your Message</label>
+          <textarea id="message" class="form-control" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark">Send Message</button>
+        <div id="thankYou" class="mt-3" style="display: none;" data-aos="zoom-in">Thank you for contacting AuraGroom!</div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Social Icons -->
+  <div class="text-center mt-5 social-icons" data-aos="fade-up">
+    <a href="https://www.instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://wa.me/919999999999" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
+
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const emailInput = document.getElementById("email");
+    const thankYou = document.getElementById("thankYou");
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      emailInput.classList.add("is-invalid");
+      return;
+    } else {
+      emailInput.classList.remove("is-invalid");
+    }
+
+    const userMessage = { name, email, message, time: new Date().toLocaleString() };
+    const savedMessages = JSON.parse(localStorage.getItem("messages")) || [];
+    savedMessages.push(userMessage);
+    localStorage.setItem("messages", JSON.stringify(savedMessages));
+
+    thankYou.style.display = "block";
+    this.reset();
+  });
+</script>
+<footer class=" text-white text-center py-4 " style="background: linear-gradient(135deg, #000000, #434343);">
+  <div class="container">
+    <p class="mb-1">&copy; 2025 AuraGroom. All rights reserved.</p>
+    <div>
+    
+    </div>
+  </div>
+</footer>
+</body>
+</html>

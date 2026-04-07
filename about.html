@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - AuraGroom</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background: linear-gradient(to right, #c2e9fb, #a1c4fd);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .about-section {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+    .section-title {
+      font-weight: bold;
+      color: #007bff;
+      margin-top: 20px;
+    }
+    .logo {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+    .highlight {
+      background: linear-gradient(90deg, #64b5f6, #42a5f5);
+      padding: 10px;
+      border-radius: 10px;
+      color: #fff;
+    }
+    .counter-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 30px;
+      background-color: #e3f2fd;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+    .counter {
+      text-align: center;
+      font-size: 1.5rem;
+      color: #0d47a1;
+      font-weight: bold;
+      margin: 10px;
+    }
+    .founder-card {
+      text-align: center;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 15px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    .tabs-container {
+      margin-top: 30px;
+    }
+    .accordion-button {
+      background-color: #0d6efd;
+      color: white;
+    }
+    .carousel-item {
+      text-align: center;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+    }
+    @media (max-width: 576px) {
+      .counter {
+        font-size: 1.2rem;
+      }
+      .about-section {
+        padding: 20px;
+      }
+    }
+    
+  </style>
+</head>
+<!-- Header -->
+<nav class="navbar navbar-expand-lg shadow" style="background: linear-gradient(135deg, #000000, #434343);">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-white" href="index.html">AuraGroom</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active text-white" href="index.html">Home</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<body>
+  <div class="container py-5">
+    <div class="text-center mb-4" data-aos="fade-down">
+      <img src="c:\Users\delll\Downloads\ChatGPT Image Apr 7, 2025, 12_52_10 AM.png" alt="AuraGroom Logo" class="logo">
+      <h1 class="fw-bold">Welcome to AuraGroom</h1>
+      <p class="lead">Elevating Men's Grooming to a Lifestyle</p>
+    </div>
+
+    <div class="about-section" data-aos="fade-up">
+      <h2 class="section-title">Our Story 🚀</h2>
+      <p>AuraGroom was born out of a passion for redefining the modern man’s grooming routine. We believe grooming is more than just a habit—it's a reflection of confidence, discipline, and self-respect.</p>
+    </div>
+
+    <div class="about-section" data-aos="fade-right">
+      <h2 class="section-title">What We Offer 💼</h2>
+      <ul>
+        <li>Premium beard, hair, and skincare products</li>
+        <li>Stylish grooming kits curated for every man</li>
+        <li>Expert tips & blog articles on grooming trends</li>
+        <li>Easy-to-use e-commerce platform with smooth shopping</li>
+      </ul>
+    </div>
+
+    <div class="about-section highlight" data-aos="zoom-in">
+      <h2 class="section-title">Our Mission 🎯</h2>
+      <p>To empower men across India with accessible, quality grooming products while celebrating individuality and self-care.</p>
+    </div>
+
+    <div class="about-section" data-aos="fade-left">
+      <h2 class="section-title">Why Choose Us? 🌟</h2>
+      <ul>
+        <li>Natural and cruelty-free ingredients</li>
+        <li>Affordable luxury made for Indian skin and hair</li>
+        <li>Fast shipping and dedicated customer service</li>
+        <li>Thousands of happy customers nationwide</li>
+      </ul>
+    </div>
+
+    <div class="about-section" data-aos="flip-left">
+      <h2 class="section-title">Meet Our Founder 👤</h2>
+      <div class="founder-card">
+        <h4>Mr. Vedant Wagh</h4>
+        <p>Founder & CEO</p>
+        <p>Vedant is a passionate entrepreneur who believes that grooming is not just about appearance but empowerment. He started AuraGroom with the vision of making every man feel confident, polished, and proud.</p>
+      </div>
+    </div>
+
+    <div class="counter-section" data-aos="fade-up">
+      <div class="counter">10,000+<br>Happy Customers</div>
+      <div class="counter">100+<br>Products</div>
+      <div class="counter">50+<br>Grooming Experts</div>
+    </div>
+
+    <div class="about-section tabs-container" data-aos="fade-up">
+      <h2 class="section-title">Explore More 🔍</h2>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision" type="button" role="tab">Our Vision</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="culture-tab" data-bs-toggle="tab" data-bs-target="#culture" type="button" role="tab">Work Culture</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="future-tab" data-bs-toggle="tab" data-bs-target="#future" type="button" role="tab">Future Plans</button>
+        </li>
+      </ul>
+      <div class="tab-content p-3 bg-light border border-top-0" id="myTabContent">
+        <div class="tab-pane fade show active" id="vision" role="tabpanel">
+          Our vision is to revolutionize men’s grooming with innovative, sustainable, and trendsetting products.
+        </div>
+        <div class="tab-pane fade" id="culture" role="tabpanel">
+          We embrace creativity, inclusivity, and self-expression in everything we do—from product design to customer care.
+        </div>
+        <div class="tab-pane fade" id="future" role="tabpanel">
+          We aim to launch our exclusive AuraGroom lounges across India, where self-care meets luxury and community.
+        </div>
+      </div>
+    </div>
+
+    <div class="about-section" data-aos="zoom-in-up">
+      <h2 class="section-title">Testimonials ❤️</h2>
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <p>"AuraGroom products are top-notch! I feel more confident and stylish than ever." – Rohan S.</p>
+          </div>
+          <div class="carousel-item">
+            <p>"Love the natural feel and scent of their beard oils. Highly recommended!" – Arjun M.</p>
+          </div>
+          <div class="carousel-item">
+            <p>"Best grooming brand I’ve tried. Fast delivery and excellent support." – Karan D.</p>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="about-section" data-aos="fade-up">
+      <h2 class="section-title">FAQs ❓</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq1">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+              Are your products safe for sensitive skin?
+            </button>
+          </h2>
+          <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Yes! All our products are dermatologically tested and made with gentle, natural ingredients.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+              How long does shipping take?
+            </button>
+          </h2>
+          <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">We ship across India in 2–5 business days depending on your location.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+              Do you offer refunds?
+            </button>
+          </h2>
+          <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Yes. We have a 7-day hassle-free return policy if the product is unused and in original condition.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <!-- Footer -->
+  <footer class="text-white text-center py-4" style="background: linear-gradient(135deg, #000000, #434343); width: 100%;">
+    <div class="container">
+      <p class="mb-2">&copy; 2025 AuraGroom. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com" target="_blank" class="text-white mx-3"><i class="fab fa-instagram fa-lg"></i></a>
+        <a href="https://www.linkedin.com" target="_blank" class="text-white mx-3"><i class="fab fa-linkedin fa-lg"></i></a>
+        <a href="https://wa.me/919999999999" target="_blank" class="text-white mx-3"><i class="fab fa-whatsapp fa-lg"></i></a>
+      </div>
+    </div>
+  </footer>
+  
+  
+
+  
+
+</body>
+</html>

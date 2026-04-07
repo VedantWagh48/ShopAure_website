@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - AuraGroom</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #f8f9fa, #d1f2eb, #f3e5f5);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .blog-section {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      animation: slideIn 1s ease;
+      margin-bottom: 30px;
+    }
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .blog-title {
+      font-weight: bold;
+      color: #ff6f00;
+      cursor: pointer;
+    }
+    .blog-content {
+      display: none;
+      padding-top: 10px;
+      color: #5d4037;
+    }
+    .blog-title:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <body class="d-flex flex-column min-vh-100">
+
+  <!-- Header -->
+<nav class="navbar navbar-expand-lg shadow" style="background: linear-gradient(135deg, #000000, #434343);">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-white" href="index.html">AuraGroom</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active text-white" href="index.html">Home</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="flex-grow-1">
+  <!-- Your Grooming Blog section here -->
+
+
+  <div class="container py-5">
+    <div class="blog-section">
+      <h2 class="text-center mb-4">Grooming Blog</h2>
+
+      <div>
+        <p class="blog-title" onclick="toggleContent('blog1')">Top Grooming Trends 🔽</p>
+        <div class="blog-content" id="blog1">
+          <ul>
+            <li><strong>Minimalist Skincare:</strong> Less is more! Men now prefer gentle cleansers and simple moisturizers for daily care.</li>
+            <li><strong>Natural Beard Care:</strong> Essential oils and organic balms are trending for a well-groomed beard.</li>
+            <li><strong>Hair Styling Wax:</strong> Matte finish wax is replacing shiny gels for a more natural look.</li>
+            <li><strong>Fragrance Layering:</strong> Combining body wash, deodorant, and perfume of the same scent for lasting freshness.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <p class="blog-title" onclick="toggleContent('blog2')">Daily Grooming Tips 🔽</p>
+        <div class="blog-content" id="blog2">
+          <ul>
+            <li>🧼 Wash your face twice a day to keep it fresh and acne-free.</li>
+            <li>🪒 Always shave in the direction of hair growth to avoid irritation.</li>
+            <li>💧 Stay hydrated – healthy skin starts from within.</li>
+            <li>🧴 Use SPF-based moisturizers even on cloudy days.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <p class="blog-title" onclick="toggleContent('blog3')">Haircare Hacks for Men 🔽</p>
+        <div class="blog-content" id="blog3">
+          <ul>
+            <li>🧴 Use sulfate-free shampoo to avoid dryness and damage.</li>
+            <li>🌿 Massage your scalp with coconut or argan oil weekly.</li>
+            <li>💇‍♂️ Trim your hair every 4-6 weeks to avoid split ends.</li>
+            <li>🌞 Avoid styling when hair is wet — it weakens roots.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <p class="blog-title" onclick="toggleContent('blog4')">Fragrance & Perfume Tips 🔽</p>
+        <div class="blog-content" id="blog4">
+          <ul>
+            <li>💡 Apply fragrance to pulse points — wrists, neck, and chest.</li>
+            <li>🚿 Apply right after showering when skin is still warm.</li>
+            <li>🧴 Don’t rub wrists together — it breaks the scent.</li>
+            <li>🌬️ Store perfume in a cool, dry place to retain aroma longer.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <p class="blog-title" onclick="toggleContent('blog5')">Seasonal Grooming Guide 🔽</p>
+        <div class="blog-content" id="blog5">
+          <ul>
+            <li>❄️ Winter: Use thicker moisturizers to combat dryness.</li>
+            <li>🌸 Spring: Exfoliate twice a week to remove dead skin.</li>
+            <li>☀️ Summer: Use lightweight gel moisturizers and sunscreen.</li>
+            <li>🍁 Autumn: Shift to cream-based cleansers to prepare for cold.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+  <script>
+    function toggleContent(id) {
+      const content = document.getElementById(id);
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <footer class="text-white text-center py-4 w-100" style="background: linear-gradient(135deg, #000000, #434343); position: relative;">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 AuraGroom. All rights reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>

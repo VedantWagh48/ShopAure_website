@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Cart - AuraGroom</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    h2 {
+      animation: slideIn 1s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card {
+      width: 100%;
+      max-width: 320px;
+      min-height: 420px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin: auto;
+      border-radius: 12px;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+
+    .btn-danger:hover {
+      background-color: #c82333;
+    }
+
+    .btn-warning:hover {
+      background-color: #e0a800;
+    }
+
+    .btn-success:hover {
+      background-color: #218838;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.7s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Header -->
+<nav class="navbar navbar-expand-lg shadow" style="background: linear-gradient(135deg, #000000, #434343);">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-white" href="index.html">AuraGroom</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active text-white" href="index.html">Home</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="container mt-4">
+    <h2 class="mb-4 text-success">🛒 Your Cart</h2>
+    <div id="cart-items" class="row"></div>
+
+    <div class="mt-4 bg-light p-3 rounded shadow-sm">
+      <h4>Total: ₹<span id="total-price">0</span></h4>
+      <button class="btn btn-warning me-2" onclick="clearCart()">Clear Cart</button>
+      <button class="btn btn-success" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <script>
+    let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function renderCart() {
+      const container = document.getElementById("cart-items");
+      const totalPriceElem = document.getElementById("total-price");
+      container.innerHTML = "";
+      let total = 0;
+
+      if (cartItems.length === 0) {
+        container.innerHTML = "<p>Your cart is empty.</p>";
+        totalPriceElem.textContent = "0";
+        return;
+      }
+
+      cartItems.forEach((item, index) => {
+        total += item.price;
+
+        const col = document.createElement("div");
+        col.className = "col-md-4 mb-4 fade-in";
+        col.innerHTML = `
+          <div class="card h-100 border-success d-flex flex-column">
+            <img src="${item.image}" class="card-img-top" alt="${item.name}">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title text-success">${item.name}</h5>
+              <p class="card-text text-muted mb-4">₹${item.price}</p>
+              <div class="mt-auto">
+                <button class="btn btn-danger w-100" onclick="removeFromCart(${index})">Remove</button>
+              </div>
+            </div>
+          </div>
+        `;
+        container.appendChild(col);
+      });
+
+      totalPriceElem.textContent = total;
+    }
+
+    function removeFromCart(index) {
+      cartItems.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+      renderCart();
+    }
+
+    function clearCart() {
+      if (confirm("Are you sure you want to clear the cart?")) {
+        cartItems = [];
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+        renderCart();
+      }
+    }
+
+    function checkout() {
+      const totalAmount = cartItems.reduce((sum, item) => sum + item.price, 0) * 100;
+      if (totalAmount === 0) return alert("Cart is empty!");
+
+      const options = {
+        key: "rzp_test_1HFAujarn5AyS9",
+        amount: totalAmount,
+        currency: "INR",
+        name: "AuraGroom",
+        description: "Order Payment",
+        image: "c:\\Users\\delll\\Downloads\\ChatGPT Image Apr 7, 2025, 12_52_10 AM.png",
+        handler: function (response) {
+          document.getElementById("checkout-preview").style.display = "block";
+          setTimeout(() => {
+            clearCart();
+          }, 2500);
+        },
+        prefill: {
+          name: "AuraGroom Customer",
+          email: "customer@example.com"
+        },
+        theme: {
+          color: "#198754"
+        }
+      };
+      const rzp = new Razorpay(options);
+      rzp.open();
+    }
+
+    renderCart();
+  </script>
+
+  <footer class="navbar navbar-expand-lg shadow" style="background: linear-gradient(135deg, #000000, #434343);">
+    <div class="container">
+      <p class="mb-1">&copy; 2025 AuraGroom. All rights reserved.</p>
+      <div>
+        <a href="index.html" class="text-white text-decoration-none me-3">Home</a>
+        <a href="cart.html" class="text-white text-decoration-none me-3">Cart</a>
+        <a href="contact.html" class="text-white text-decoration-none">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
